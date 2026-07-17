@@ -1,0 +1,20 @@
+id,name,category,price,cost
+P001,MindBox Edge Server,Hardware,1200,600
+P002,Sensory Hub IoT,Hardware,1450,710
+P003,MindMonitor Ultra HD,Hardware,1700,820
+P004,Cognitive Processor v4,Hardware,1950,930
+P005,NeuroCam Pro,Hardware,2200,1040
+P006,Acoustic Array v2,Hardware,2450,1150
+P007,MetricMind Analyzer Standard,Software,800,100
+P008,DataStream Connector Enterprise,Software,950,120
+P009,CubeModeler Suite Pro,Software,1100,140
+P010,QueryOptim Engine Enterprise,Software,1250,160
+P011,SemanticSync Client,Software,1400,180
+P012,MindCloud Subscription Business,SaaS,150,15
+P013,MetricMind Premium Cloud,SaaS,200,20
+P014,Agentic BI Seat License,SaaS,250,25
+P015,Enterprise Collaboration Hub,SaaS,300,30
+P016,Architecture Discovery Workshop,Consulting,3000,1500
+P017,Semantic Modeling Setup Service,Consulting,4000,1900
+P018,BI Governance Implementation,Consulting,5000,2300
+P019,Custom ETL Pipeline Review,Consulting,6000,2700
