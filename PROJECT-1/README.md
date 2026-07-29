@@ -1,88 +1,45 @@
-# 📊 MetricMind – Agentic Semantic BI Engine
+# 🚀 MetricMind – Agentic Semantic BI Engine
 
-An AI-powered Business Intelligence platform that transforms enterprise data into interactive dashboards, visual analytics, and actionable business insights.
-
----
-
-# 🚀 About the Project
-
-MetricMind is a Business Intelligence solution developed as part of the **Axlero Internship Program**.
-
-The project focuses on transforming business datasets into meaningful visualizations through an interactive dashboard. It enables users to monitor key business metrics, analyze performance, and gain data-driven insights using modern analytics techniques.
-
-The system is designed to provide an intuitive interface for exploring enterprise data, monitoring KPIs, and supporting informed business decisions.
+MetricMind is an AI-powered Business Intelligence dashboard that transforms business data into interactive visualizations and actionable insights. It provides real-time analytics for revenue, customers, products, inventory, budgets, expenses, and returns through an intuitive web interface.
 
 ---
 
-# 🎯 Project Objectives
+## 🌐 Live Demo
 
-- Build an interactive Business Intelligence dashboard
-- Visualize enterprise business data
-- Monitor Key Performance Indicators (KPIs)
-- Analyze revenue and sales performance
-- Track inventory and order status
-- Compare budgets with expenses
-- Generate AI-based business insights
-- Improve business decision-making through analytics
+**🔗 Live Application:** https://matricmind-4.onrender.com
 
 ---
 
-# ✨ Features
+## ✨ Features
 
-- 📊 Interactive Dashboard
-- 📈 Revenue Analytics
-- 🌍 Sales by Region
-- 📦 Inventory Monitoring
-- 💰 Budget vs Expense Analysis
-- 🛒 Top Products Analysis
-- 📋 Order Status Tracking
-- 🤖 AI Insights
-- 📄 Executive Summary
-- 🔍 Dashboard Search
-- 📱 Responsive User Interface
+- 📊 Interactive Business Dashboard
+- 📈 Plotly Data Visualizations
+- 🤖 AI-Powered Business Insights
+- 📋 Executive Summary
+- 🔍 Search Functionality
+- 🌙 Dark Mode Support
+- 📱 Responsive Design
+- ⚡ Flask Backend
 
 ---
 
-# 🛠️ Technology Stack
-
-## Backend
+## 🛠️ Tech Stack
 
 - Python
 - Flask
 - Pandas
-
-## Frontend
-
+- Plotly
 - HTML5
 - CSS3
 - JavaScript
 
-## Data Visualization
-
-- Plotly
-
-## Version Control
-
-- Git
-- GitHub
-
 ---
 
-# 📂 Repository Structure
+## 📂 Project Structure
 
 ```text
-MetricMind/
-│
+matricmind/
 ├── database/
-│   ├── customers/
-│   ├── orders/
-│   ├── products/
-│   ├── budgets/
-│   ├── expenses/
-│   ├── inventory/
-│   ├── suppliers/
-│   └── ...
-│
 ├── PROJECT-1/
 │   ├── backend/
 │   ├── charts/
@@ -93,106 +50,83 @@ MetricMind/
 │   ├── templates/
 │   ├── requirements.txt
 │   └── README.md
-│
 └── README.md
 ```
 
 ---
 
-# 📊 Dashboard Modules
+## ▶️ Installation
 
-The dashboard includes:
-
-- KPI Cards
-- Monthly Revenue Analysis
-- Sales by Region
-- Top Products
-- Inventory Dashboard
-- Budget vs Expense Comparison
-- Order Status Overview
-- AI Business Insights
-- Executive Summary
-
----
-
-# 📁 Database
-
-The repository contains business datasets used for analytics and visualization.
-
-Available datasets include:
-
-- Customers
-- Orders
-- Products
-- Inventory
-- Budgets
-- Expenses
-- Suppliers
-- Salespersons
-- Calendar
-
-These datasets serve as the foundation for business intelligence reporting and analytics.
-
----
-
-# ⚙️ Getting Started
-
-## Clone the Repository
+Clone the repository:
 
 ```bash
 git clone https://github.com/blackshadowog/matricmind.git
-```
-
-## Navigate to Project
-
-```bash
 cd matricmind/PROJECT-1
 ```
 
-## Install Dependencies
+Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate it (Windows):
+
+```bash
+venv\Scripts\activate
+```
+
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Run the Application
+Run the application:
 
 ```bash
 python backend/app.py
 ```
 
----
+Open your browser:
 
-# 🚀 Future Enhancements
-
-- AI-powered Query Assistant
-- Semantic Business Layer
-- PostgreSQL Integration
-- User Authentication
-- Advanced Analytics
-- Cloud Deployment
-- Export Reports (PDF/Excel)
+```
+http://127.0.0.1:5000
+```
 
 ---
 
-# 📜 License
+## 🌍 Deployment
 
-This project is developed for educational and internship purposes.
+**Platform:** Render
 
----
-
-# 👨‍💻 Project Information
-
-**Project Name:** MetricMind – Agentic Semantic BI Engine
-
-**Repository:** MetricMind
-
-**Organization:** Axlero Internship Program
-
-**Version:** 1.0
-
-**Status:** Active Development
+**Live URL:** https://matricmind-4.onrender.com
 
 ---
 
-⭐ If you found this project useful, consider starring the repository.
+## 📸 Dashboard
+
+The dashboard provides:
+
+- Revenue Analytics
+- Customer Insights
+- Product Performance
+- Sales by Region
+- Inventory Overview
+- Budget vs Expense Analysis
+- Order Status Tracking
+- AI Business Insights
+
+---
+
+## 📄 License
+
+This project is developed for learning and demonstration purposes.
+
+---
+
+## 👨‍💻 Author
+
+**Rakshith Merugu**
+
+GitHub: https://github.com/blackshadowog
