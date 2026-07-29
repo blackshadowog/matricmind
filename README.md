@@ -1,86 +1,94 @@
 # 📊 MetricMind – Agentic Semantic BI Engine
 
-> An AI-powered Semantic Business Intelligence platform that enables users to query enterprise data using natural language while ensuring trusted, explainable, and business-aligned analytics.
+An AI-powered Semantic Business Intelligence platform that enables users to query enterprise data using natural language while ensuring trusted, explainable, and business-aligned analytics.
 
 ---
 
-## 🚀 About the Project
+# 🚀 About the Project
 
-**MetricMind** is a collaborative team project developed as part of the **Axlero Internship Program**.
+MetricMind is a collaborative team project developed as part of the **Axlero Internship Program**.
 
-The goal of this project is to bridge the gap between Large Language Models (LLMs) and enterprise data warehouses by introducing a **Semantic Business Intelligence Layer**. Instead of allowing an AI model to directly generate SQL against raw databases, MetricMind translates user questions into trusted business metrics through predefined semantic models.
+The project bridges the gap between **Large Language Models (LLMs)** and enterprise data by introducing a **Semantic Business Intelligence Layer**. Instead of allowing AI models to directly generate SQL against raw databases, MetricMind translates natural language queries into trusted business metrics using predefined semantic models.
 
-This approach reduces hallucinations, enforces business logic, and provides transparent, reliable analytics.
+This architecture improves accuracy, enforces business rules, minimizes hallucinations, and delivers transparent, explainable insights for business users.
 
 ---
 
 # 🎯 Problem Statement
 
-Traditional Text-to-SQL systems often suffer from:
+Traditional Text-to-SQL systems often face challenges such as:
 
 - Incorrect table joins
-- Inconsistent revenue calculations
+- Inconsistent business metric calculations
 - Missing business rules
 - Hallucinated SQL queries
-- Lack of transparency
+- Limited explainability
+- Lack of trust in generated analytics
 
-MetricMind solves these problems using a semantic layer that acts as a trusted source of truth between the AI and the database.
+MetricMind addresses these issues through a semantic layer that serves as a reliable source of truth between AI models and enterprise data.
 
 ---
 
-# ✨ Features
+# ✨ Key Features
 
 - 🤖 Natural Language Analytics
+- 📊 Interactive Business Intelligence Dashboard
 - 📈 AI-Powered Metric Generation
 - 🏢 Enterprise Semantic Layer
 - 🔍 Transparent Query Explanation
-- 📊 Interactive Dashboard
-- ⚡ Fast Metric Computation
 - 📚 Business Rule Enforcement
+- ⚡ Fast Metric Computation
 - 🧠 Explainable AI Responses
+- 📋 Trusted Business Metrics
+- 📉 KPI Monitoring & Visualization
 
 ---
 
-# 🏗️ Tech Stack
+# 🛠️ Technology Stack
 
-### Frontend
+## Frontend
 
 - React
 - TypeScript
 - Vite
+- HTML5
+- CSS3
 
-### Backend
+## Backend
 
 - Node.js
-- Express
+- Express.js
 
-### AI
+## Artificial Intelligence
 
 - OpenAI API
 - Semantic Query Agent
 
-### Database
+## Data & Storage
 
-- PostgreSQL (Planned)
-- CSV-based sample warehouse
+- CSV-Based Sample Data Warehouse
+- PostgreSQL *(Planned)*
 
-### Tools
+## Tools & DevOps
 
-- Docker
 - Git
 - GitHub
+- Docker
 
 ---
 
 # 📂 Project Structure
 
-```
+```text
 MetricMind/
 │
 ├── database/
-│   ├── customers
-│   ├── products
-│   ├── orders
+│   ├── customers/
+│   ├── orders/
+│   ├── products/
+│   ├── budgets/
+│   ├── expenses/
+│   ├── inventory/
 │   └── ...
 │
 ├── src/
@@ -88,8 +96,11 @@ MetricMind/
 │   ├── components/
 │   ├── semantic/
 │   ├── lib/
+│   ├── pages/
+│   ├── hooks/
 │   └── types/
 │
+├── public/
 ├── assets/
 ├── package.json
 ├── server.ts
@@ -98,9 +109,9 @@ MetricMind/
 
 ---
 
-# 🧠 How It Works
+# 🧠 System Workflow
 
-```
+```text
 User Question
       │
       ▼
@@ -110,50 +121,48 @@ AI Query Agent
 Semantic Layer
       │
       ▼
-Business Rules
+Business Rules Engine
       │
       ▼
-Trusted Metrics
+Trusted Business Metrics
       │
       ▼
-Visualization Dashboard
+Interactive Dashboard
 ```
 
 ---
 
 # ⚙️ Getting Started
 
-Clone the repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/blackshadowog/metricmind.git
 ```
 
-Move into the project
+## Navigate to the Project
 
 ```bash
 cd metricmind
 ```
 
-Install dependencies
+## Install Dependencies
 
 ```bash
 npm install
 ```
 
-Create environment file
+## Configure Environment Variables
 
-```bash
-cp .env.example .env
-```
+Create a `.env` file.
 
-Add your OpenAI API key
+Example:
 
-```
+```env
 OPENAI_API_KEY=your_api_key
 ```
 
-Run the development server
+## Run the Development Server
 
 ```bash
 npm run dev
@@ -161,79 +170,104 @@ npm run dev
 
 ---
 
-# 📁 Database
+# 📊 Dashboard Highlights
 
-The database folder contains the semantic warehouse structure used by the project.
+The dashboard provides interactive visualizations including:
 
-Example tables include:
+- Revenue Analytics
+- Sales Performance
+- Customer Insights
+- Product Performance
+- Inventory Monitoring
+- Budget vs Expense Analysis
+- AI Business Insights
+- KPI Dashboard
+- Executive Summary
+
+---
+
+# 📁 Data Warehouse
+
+The project currently uses a semantic warehouse built on CSV datasets.
+
+Sample datasets include:
 
 - Customers
-- Products
 - Orders
-- Calendar
+- Products
+- Inventory
+- Budgets
+- Expenses
 - Suppliers
+- Calendar
 - Salespersons
 
-These tables serve as the foundation for business metrics and semantic modeling.
+These datasets serve as the foundation for semantic modeling and trusted business analytics.
 
 ---
 
 # 👥 Team Collaboration
 
-This project is being developed collaboratively under the **Axlero Internship Program**.
+MetricMind is developed collaboratively under the **Axlero Internship Program**.
 
-Every team member contributes independently through GitHub using feature-based commits and pull requests.
-
-Contribution workflow:
+Development follows a GitHub-based collaborative workflow:
 
 1. Clone the repository
-2. Create or update your assigned module
-3. Commit your changes
-4. Push to your branch
+2. Work on the assigned module or feature
+3. Commit changes with meaningful commit messages
+4. Push to your feature branch
 5. Create a Pull Request
+6. Review and merge after approval
 
 ---
 
-# 🌟 Future Roadmap
+# 🚀 Future Roadmap
 
 - PostgreSQL Integration
-- Authentication
-- Multi-Agent Workflow
+- User Authentication
+- Role-Based Access Control
 - Dashboard Builder
 - KPI Designer
-- Data Lineage
 - AI Report Generation
-- Role-Based Access Control
+- Multi-Agent Workflow
+- Data Lineage
 - Semantic Model Builder
 - Cloud Deployment
+- Advanced Analytics
+- Export Reports (PDF/Excel)
 
 ---
 
 # 🤝 Contributing
 
-We welcome contributions from every team member.
+We welcome contributions from all project members.
 
 Before contributing:
 
-- Follow the project structure.
-- Write meaningful commit messages.
-- Test your code before pushing.
-- Keep documentation updated.
+- Follow the project structure
+- Write meaningful commit messages
+- Test your code before pushing
+- Keep documentation updated
+- Follow coding standards and review guidelines
 
 ---
 
 # 📜 License
 
-This project is developed for educational and internship purposes under the Axlero Internship Program.
+This project is developed for educational and internship purposes under the **Axlero Internship Program**.
 
 ---
 
-# 👨‍💻 Team
+# 👨‍💻 Project Information
 
-**Project:** MetricMind – Agentic Semantic BI Engine
+**Project Name:** MetricMind – Agentic Semantic BI Engine
 
 **Organization:** Axlero Internship Program
 
 **Project Lead:** Abhishek Kumar Tiwari
 
-Developed collaboratively by the Axlero Internship Team.
+**Development Model:** Collaborative Team Project
+
+---
+
+⭐ If you found this project interesting, consider starring the repository and following its progress.
