@@ -1,9 +1,9 @@
 import os
 from flask import Flask, render_template
 
-from analytics import get_dashboard_metrics
+from backend.analytics import get_dashboard_metrics
 
-from charts import (
+from backend.charts import (
     monthly_revenue_chart,
     top_products_chart,
     sales_by_region_chart,
