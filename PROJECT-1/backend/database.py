@@ -1,12 +1,25 @@
 import os
 import pandas as pd
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATABASE_DIR = os.path.join(BASE_DIR, "database")
+# Current file: PROJECT-1/backend/database.py
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Project folder: PROJECT-1
+PROJECT_DIR = os.path.dirname(CURRENT_DIR)
+
+# Repository root: matricmind
+ROOT_DIR = os.path.dirname(PROJECT_DIR)
+
+# Database folder: matricmind/database
+DATABASE_DIR = os.path.join(ROOT_DIR, "database")
 
 
 def load_csv(filename):
     path = os.path.join(DATABASE_DIR, filename)
+
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"CSV file not found: {path}")
+
     return pd.read_csv(path)
 
 
