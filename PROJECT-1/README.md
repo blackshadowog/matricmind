@@ -1,83 +1,74 @@
 # 📊 MetricMind – Agentic Semantic BI Engine
 
-An AI-powered Semantic Business Intelligence platform that enables users to query enterprise data using natural language while ensuring trusted, explainable, and business-aligned analytics.
+An AI-powered Business Intelligence platform that transforms enterprise data into interactive dashboards, visual analytics, and actionable business insights.
 
 ---
 
 # 🚀 About the Project
 
-MetricMind is a collaborative team project developed as part of the **Axlero Internship Program**.
+MetricMind is a Business Intelligence solution developed as part of the **Axlero Internship Program**.
 
-The project bridges the gap between **Large Language Models (LLMs)** and enterprise data by introducing a **Semantic Business Intelligence Layer**. Instead of allowing AI models to directly generate SQL against raw databases, MetricMind translates natural language queries into trusted business metrics using predefined semantic models.
+The project focuses on transforming business datasets into meaningful visualizations through an interactive dashboard. It enables users to monitor key business metrics, analyze performance, and gain data-driven insights using modern analytics techniques.
 
-This architecture improves accuracy, enforces business rules, minimizes hallucinations, and delivers transparent, explainable insights for business users.
-
----
-
-# 🎯 Problem Statement
-
-Traditional Text-to-SQL systems often face challenges such as:
-
-- Incorrect table joins
-- Inconsistent business metric calculations
-- Missing business rules
-- Hallucinated SQL queries
-- Limited explainability
-- Lack of trust in generated analytics
-
-MetricMind addresses these issues through a semantic layer that serves as a reliable source of truth between AI models and enterprise data.
+The system is designed to provide an intuitive interface for exploring enterprise data, monitoring KPIs, and supporting informed business decisions.
 
 ---
 
-# ✨ Key Features
+# 🎯 Project Objectives
 
-- 🤖 Natural Language Analytics
-- 📊 Interactive Business Intelligence Dashboard
-- 📈 AI-Powered Metric Generation
-- 🏢 Enterprise Semantic Layer
-- 🔍 Transparent Query Explanation
-- 📚 Business Rule Enforcement
-- ⚡ Fast Metric Computation
-- 🧠 Explainable AI Responses
-- 📋 Trusted Business Metrics
-- 📉 KPI Monitoring & Visualization
+- Build an interactive Business Intelligence dashboard
+- Visualize enterprise business data
+- Monitor Key Performance Indicators (KPIs)
+- Analyze revenue and sales performance
+- Track inventory and order status
+- Compare budgets with expenses
+- Generate AI-based business insights
+- Improve business decision-making through analytics
+
+---
+
+# ✨ Features
+
+- 📊 Interactive Dashboard
+- 📈 Revenue Analytics
+- 🌍 Sales by Region
+- 📦 Inventory Monitoring
+- 💰 Budget vs Expense Analysis
+- 🛒 Top Products Analysis
+- 📋 Order Status Tracking
+- 🤖 AI Insights
+- 📄 Executive Summary
+- 🔍 Dashboard Search
+- 📱 Responsive User Interface
 
 ---
 
 # 🛠️ Technology Stack
 
-## Frontend
-
-- React
-- TypeScript
-- Vite
-- HTML5
-- CSS3
-
 ## Backend
 
-- Node.js
-- Express.js
+- Python
+- Flask
+- Pandas
 
-## Artificial Intelligence
+## Frontend
 
-- OpenAI API
-- Semantic Query Agent
+- HTML5
+- CSS3
+- JavaScript
 
-## Data & Storage
+## Data Visualization
 
-- CSV-Based Sample Data Warehouse
-- PostgreSQL *(Planned)*
+- Plotly
 
-## Tools & DevOps
+## Version Control
 
 - Git
 - GitHub
-- Docker
 
 ---
 
-# 📂 Project Structure
+# 📂 Repository Structure
 
 ```text
 MetricMind/
@@ -89,108 +80,46 @@ MetricMind/
 │   ├── budgets/
 │   ├── expenses/
 │   ├── inventory/
+│   ├── suppliers/
 │   └── ...
 │
-├── src/
-│   ├── agent/
-│   ├── components/
-│   ├── semantic/
-│   ├── lib/
-│   ├── pages/
-│   ├── hooks/
-│   └── types/
+├── PROJECT-1/
+│   ├── backend/
+│   ├── charts/
+│   ├── data/
+│   ├── frontend/
+│   ├── reports/
+│   ├── static/
+│   ├── templates/
+│   ├── requirements.txt
+│   └── README.md
 │
-├── public/
-├── assets/
-├── package.json
-├── server.ts
 └── README.md
 ```
 
 ---
 
-# 🧠 System Workflow
+# 📊 Dashboard Modules
 
-```text
-User Question
-      │
-      ▼
-AI Query Agent
-      │
-      ▼
-Semantic Layer
-      │
-      ▼
-Business Rules Engine
-      │
-      ▼
-Trusted Business Metrics
-      │
-      ▼
-Interactive Dashboard
-```
+The dashboard includes:
 
----
-
-# ⚙️ Getting Started
-
-## Clone the Repository
-
-```bash
-git clone https://github.com/blackshadowog/metricmind.git
-```
-
-## Navigate to the Project
-
-```bash
-cd metricmind
-```
-
-## Install Dependencies
-
-```bash
-npm install
-```
-
-## Configure Environment Variables
-
-Create a `.env` file.
-
-Example:
-
-```env
-OPENAI_API_KEY=your_api_key
-```
-
-## Run the Development Server
-
-```bash
-npm run dev
-```
-
----
-
-# 📊 Dashboard Highlights
-
-The dashboard provides interactive visualizations including:
-
-- Revenue Analytics
-- Sales Performance
-- Customer Insights
-- Product Performance
-- Inventory Monitoring
-- Budget vs Expense Analysis
+- KPI Cards
+- Monthly Revenue Analysis
+- Sales by Region
+- Top Products
+- Inventory Dashboard
+- Budget vs Expense Comparison
+- Order Status Overview
 - AI Business Insights
-- KPI Dashboard
 - Executive Summary
 
 ---
 
-# 📁 Data Warehouse
+# 📁 Database
 
-The project currently uses a semantic warehouse built on CSV datasets.
+The repository contains business datasets used for analytics and visualization.
 
-Sample datasets include:
+Available datasets include:
 
 - Customers
 - Orders
@@ -199,62 +128,56 @@ Sample datasets include:
 - Budgets
 - Expenses
 - Suppliers
-- Calendar
 - Salespersons
+- Calendar
 
-These datasets serve as the foundation for semantic modeling and trusted business analytics.
-
----
-
-# 👥 Team Collaboration
-
-MetricMind is developed collaboratively under the **Axlero Internship Program**.
-
-Development follows a GitHub-based collaborative workflow:
-
-1. Clone the repository
-2. Work on the assigned module or feature
-3. Commit changes with meaningful commit messages
-4. Push to your feature branch
-5. Create a Pull Request
-6. Review and merge after approval
+These datasets serve as the foundation for business intelligence reporting and analytics.
 
 ---
 
-# 🚀 Future Roadmap
+# ⚙️ Getting Started
 
+## Clone the Repository
+
+```bash
+git clone https://github.com/blackshadowog/matricmind.git
+```
+
+## Navigate to Project
+
+```bash
+cd matricmind/PROJECT-1
+```
+
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## Run the Application
+
+```bash
+python backend/app.py
+```
+
+---
+
+# 🚀 Future Enhancements
+
+- AI-powered Query Assistant
+- Semantic Business Layer
 - PostgreSQL Integration
 - User Authentication
-- Role-Based Access Control
-- Dashboard Builder
-- KPI Designer
-- AI Report Generation
-- Multi-Agent Workflow
-- Data Lineage
-- Semantic Model Builder
-- Cloud Deployment
 - Advanced Analytics
+- Cloud Deployment
 - Export Reports (PDF/Excel)
-
----
-
-# 🤝 Contributing
-
-We welcome contributions from all project members.
-
-Before contributing:
-
-- Follow the project structure
-- Write meaningful commit messages
-- Test your code before pushing
-- Keep documentation updated
-- Follow coding standards and review guidelines
 
 ---
 
 # 📜 License
 
-This project is developed for educational and internship purposes under the **Axlero Internship Program**.
+This project is developed for educational and internship purposes.
 
 ---
 
@@ -262,12 +185,14 @@ This project is developed for educational and internship purposes under the **Ax
 
 **Project Name:** MetricMind – Agentic Semantic BI Engine
 
+**Repository:** MetricMind
+
 **Organization:** Axlero Internship Program
 
-**Project Lead:** Abhishek Kumar Tiwari
+**Version:** 1.0
 
-**Development Model:** Collaborative Team Project
+**Status:** Active Development
 
 ---
 
-⭐ If you found this project interesting, consider starring the repository and following its progress.
+⭐ If you found this project useful, consider starring the repository.
