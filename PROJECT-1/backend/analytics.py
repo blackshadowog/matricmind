@@ -1,4 +1,4 @@
-from database import load_all_tables
+from backend.database import load_all_tables
 
 
 def get_dashboard_metrics():
@@ -10,8 +10,10 @@ def get_dashboard_metrics():
     products = tables["products"]
     returns = tables["returns"]
 
-    # Calculate revenue
-    total_revenue = (order_items["quantity"] * order_items["unit_price"]).sum()
+    # Calculate total revenue
+    total_revenue = (
+        order_items["quantity"] * order_items["unit_price"]
+    ).sum()
 
     return {
         "Total Orders": len(orders),
