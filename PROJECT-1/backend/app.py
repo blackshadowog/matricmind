@@ -1,7 +1,10 @@
 import os
 from flask import Flask, render_template
 
-from backend.analytics import get_dashboard_metrics
+from backend.analytics import (
+    get_dashboard_metrics,
+    generate_ai_insights
+)
 
 from backend.charts import (
     monthly_revenue_chart,
@@ -34,12 +37,18 @@ def home():
     # KPI Metrics
     metrics = get_dashboard_metrics()
 
+    # AI Insights
+    ai_insights = generate_ai_insights()
+
     # Render Dashboard
     return render_template(
         "dashboard.html",
 
         # KPI Cards
         metrics=metrics,
+
+        # AI Insights
+        ai_insights=ai_insights,
 
         # Plotly Charts
         monthly_revenue_chart=monthly_revenue_chart(),

@@ -1390,3 +1390,54 @@ body.dark-mode .footer{
     font-weight:700;
 
 }
+.recommendation{
+    display:block;
+    margin-top:8px;
+    color:#666;
+    font-size:13px;
+    font-style:italic;
+}
+/* ==========================
+   AI Insight Recommendation
+========================== */
+
+.recommendation {
+    display: block;
+    margin-top: 8px;
+    color: #666;
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.insight {
+    transition: 0.3s ease;
+}
+
+.insight:hover {
+    transform: translateY(-4px);
+}
+
+.insight-icon {
+    font-size: 28px;
+}
+.recommendation {
+    display: block;
+    margin-top: 8px;
+    color: #666;
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.insight {
+    transition: 0.3s ease;
+}
+
+.insight:hover {
+    transform: translateY(-4px);
+}
+
+.insight-icon {
+    font-size: 28px;
+}

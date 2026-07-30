@@ -108,14 +108,18 @@
                     id="dashboardSearch"
                     placeholder="Search KPI, charts, AI insights...">
 
-                <select>
-                    <option>Last 30 Days</option>
-                    <option>Last 90 Days</option>
-                    <option>This Year</option>
+                <select id="dateFilter">
+                     <option value="30">Last 30 Days</option>
+                     <option value="90">Last 90 Days</option>
+                     <option value="365">This Year</option>
                 </select>
 
-                <select>
-                    <option>All Regions</option>
+                <select id="regionFilter">
+                     <option value="All">All Regions</option>
+                     <option value="North">North</option>
+                     <option value="South">South</option>
+                     <option value="East">East</option>
+                    <option value="West">West</option>
                 </select>
 
                 <button title="Notifications">
@@ -483,87 +487,30 @@
 
                     <div class="insight-list">
 
-                        <div class="insight">
+    {% for insight in ai_insights %}
 
-                            <div class="insight-icon">
-                                📈
-                            </div>
+    <div class="insight">
 
-                            <div>
+        <div class="insight-icon">
+            {{ insight.icon }}
+        </div>
 
-                                <h4>Revenue Growth</h4>
+        <div>
 
-                                <p>
+            <h4>{{ insight.title }}</h4>
 
-                                    Revenue has increased steadily compared to the previous month.
+            <p>{{ insight.message }}</p>
+            <small class="recommendation">
+                {{ insight.recommendation }}
+            </small>
 
-                                </p>
+        </div>
 
-                            </div>
+    </div>
 
-                        </div>
+    {% endfor %}
 
-                        <div class="insight">
-
-                            <div class="insight-icon">
-                                👥
-                            </div>
-
-                            <div>
-
-                                <h4>Customer Growth</h4>
-
-                                <p>
-
-                                    Customer registrations continue to rise with healthy engagement.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="insight">
-
-                            <div class="insight-icon">
-                                📦
-                            </div>
-
-                            <div>
-
-                                <h4>Inventory Health</h4>
-
-                                <p>
-
-                                    Stock levels are stable with no major shortages detected.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="insight">
-
-                            <div class="insight-icon">
-                                💰
-                            </div>
-
-                            <div>
-
-                                <h4>Financial Overview</h4>
-
-                                <p>
-
-                                    Budget utilization remains within expected limits.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
+</div>
 
                 </div>
 
