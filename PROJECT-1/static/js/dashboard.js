@@ -205,5 +205,39 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
+// ==========================
+// Animated KPI Counters
+// ==========================
 
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+
+    const target = Number(counter.dataset.target);
+
+    let count = 0;
+
+    const increment = Math.max(target / 100, 1);
+
+    function updateCounter() {
+
+        if (count < target) {
+
+            count += increment;
+
+            counter.textContent = Math.floor(count).toLocaleString();
+
+            requestAnimationFrame(updateCounter);
+
+        } else {
+
+            counter.textContent = target.toLocaleString();
+
+        }
+
+    }
+
+    updateCounter();
+
+});
 });
