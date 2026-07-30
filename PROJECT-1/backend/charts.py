@@ -1,7 +1,7 @@
 import pandas as pd
 import plotly.express as px
-from backend.database import load_all_tables
 
+from backend.database import load_all_tables
 
 # ==========================================
 # Monthly Revenue Chart
