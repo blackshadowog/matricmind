@@ -1,10 +1,11 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, send_file
 
 from backend.analytics import (
     get_dashboard_metrics,
     generate_ai_insights
 )
+from backend.report_generator import generate_dashboard_report
 
 from backend.charts import (
     monthly_revenue_chart,
@@ -63,5 +64,22 @@ def home():
 # Run Flask
 # ==========================================
 
+@app.route("/download-report")
+def download_report():
+
+    metrics = get_dashboard_metrics()
+    insights = generate_ai_insights()
+
+    pdf = generate_dashboard_report(
+        metrics,
+        insights
+    )
+
+    return send_file(
+        pdf,
+        as_attachment=True,
+        download_name="MetricMind_Report.pdf",
+        mimetype="application/pdf",
+    )
 if __name__ == "__main__":
     app.run(debug=True)

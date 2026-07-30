@@ -241,3 +241,14 @@ counters.forEach(counter => {
 
 });
 });
+// ==========================
+// Download Dashboard Report
+// ==========================
+
+const downloadBtn = document.getElementById("downloadDashboard");
+
+if (downloadBtn) {
+    downloadBtn.addEventListener("click", () => {
+        window.location.href = "/download-report";
+    });
+}
