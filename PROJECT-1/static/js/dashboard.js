@@ -127,7 +127,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
             dateElement.innerHTML =
                 `<i class="fa-solid fa-calendar-days"></i> ${now.toLocaleDateString()}`;
+        // Greeting
 
+const greeting = document.getElementById("greeting");
+
+const hour = now.getHours();
+
+if (greeting) {
+
+    if (hour < 12) {
+
+        greeting.innerHTML = "🌅 Good Morning";
+
+    }
+
+    else if (hour < 17) {
+
+        greeting.innerHTML = "☀️ Good Afternoon";
+
+    }
+
+    else {
+
+        greeting.innerHTML = "🌇 Good Evening";
+
+    }
+
+}
         }
 
         if (timeElement) {
@@ -252,3 +278,148 @@ if (downloadBtn) {
         window.location.href = "/download-report";
     });
 }
+// ==========================
+// AI CHAT
+// ==========================
+
+const sendBtn = document.getElementById("sendChat");
+const chatInput = document.getElementById("chatInput");
+const chatMessages = document.getElementById("chatMessages");
+
+if (sendBtn) {
+
+    sendBtn.addEventListener("click", sendMessage);
+
+    chatInput.addEventListener("keypress", function(e){
+
+        if(e.key==="Enter"){
+
+            sendMessage();
+
+        }
+
+    });
+
+}
+
+function sendMessage(){
+
+    const message = chatInput.value.trim();
+
+    if(message==="") return;
+
+    chatMessages.innerHTML +=
+        `<div class="user-message">${message}</div>`;
+        // Show loading message
+const loading = document.createElement("div");
+
+loading.className = "bot-message";
+
+loading.id = "loading";
+
+loading.innerHTML = "🤖 Thinking...";
+
+chatMessages.appendChild(loading);
+
+chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    fetch("/chat",{
+
+        method:"POST",
+
+        headers:{
+            "Content-Type":"application/json"
+        },
+
+        body:JSON.stringify({
+            message:message
+        })
+
+    })
+
+    .then(res=>res.json())
+
+    .then(data=>{
+
+    document.getElementById("loading").remove();
+
+    chatMessages.innerHTML +=
+        `<div class="bot-message">${data.answer}</div>`;
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+});
+
+    chatInput.value="";
+
+}
+const quickButtons = document.querySelectorAll(".quick-btn");
+
+quickButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        chatInput.value = button.textContent;
+
+        sendMessage();
+
+    });
+
+});
+// ==========================
+// Active Sidebar Navigation
+// ==========================
+
+const navLinks = document.querySelectorAll(".sidebar nav a");
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", function () {
+
+        navLinks.forEach(item => item.classList.remove("active"));
+
+        this.classList.add("active");
+
+    });
+
+});
+// ==========================
+// Notification Panel
+// ==========================
+
+const bell = document.getElementById("notificationBtn");
+
+const panel = document.getElementById("notificationPanel");
+
+if(bell){
+
+    bell.addEventListener("click",()=>{
+
+        if(panel.style.display==="block"){
+
+            panel.style.display="none";
+
+        }else{
+
+            panel.style.display="block";
+
+        }
+
+    });
+
+}
+// ==========================
+// Dashboard Loader
+// ==========================
+
+window.addEventListener("load",()=>{
+
+    const loader=document.getElementById("loader");
+
+    setTimeout(()=>{
+
+        loader.style.display="none";
+
+    },1000);
+
+});

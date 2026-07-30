@@ -2,8 +2,11 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>MetricMind Dashboard</title>
 
     <!-- Font Awesome -->
@@ -11,10 +14,25 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 
 <body>
+    <div id="loader">
+
+    <div class="loader-box">
+
+        <h1>MetricMind</h1>
+
+        <div class="loader-spinner"></div>
+
+        <p>Loading Dashboard...</p>
+
+    </div>
+
+</div>
 
 <div class="layout">
 
@@ -27,59 +45,91 @@
         <div class="brand">
 
             <div class="brand-icon">
+
                 <i class="fa-solid fa-chart-pie"></i>
+
             </div>
 
             <div>
+
                 <h2>MetricMind</h2>
+
                 <p>Business Intelligence</p>
+
             </div>
 
         </div>
 
         <nav>
 
-            <a class="active">
-                <i class="fa-solid fa-table-columns"></i>
-                <span>Dashboard</span>
-            </a>
+    <a href="#hero" class="active">
 
-            <a>
-                <i class="fa-solid fa-chart-line"></i>
-                <span>Analytics</span>
-            </a>
+        <i class="fa-solid fa-table-columns"></i>
 
-            <a>
-                <i class="fa-solid fa-boxes-stacked"></i>
-                <span>Inventory</span>
-            </a>
+        <span>Dashboard</span>
 
-            <a>
-                <i class="fa-solid fa-money-bill-trend-up"></i>
-                <span>Finance</span>
-            </a>
+    </a>
 
-            <a>
-                <i class="fa-solid fa-users"></i>
-                <span>Customers</span>
-            </a>
+    <a href="#monthlyRevenue">
 
-            <a>
-                <i class="fa-solid fa-warehouse"></i>
-                <span>Warehouse</span>
-            </a>
+        <i class="fa-solid fa-chart-line"></i>
 
-            <a>
-                <i class="fa-solid fa-robot"></i>
-                <span>AI Insights</span>
-            </a>
+        <span>Analytics</span>
 
-            <a>
-                <i class="fa-solid fa-gear"></i>
-                <span>Settings</span>
-            </a>
+    </a>
 
-        </nav>
+    <a href="#inventory">
+
+        <i class="fa-solid fa-boxes-stacked"></i>
+
+        <span>Inventory</span>
+
+    </a>
+
+    <a href="#budget">
+
+        <i class="fa-solid fa-money-bill-trend-up"></i>
+
+        <span>Finance</span>
+
+    </a>
+
+    <a href="#kpis">
+
+        <i class="fa-solid fa-users"></i>
+
+        <span>Customers</span>
+
+    </a>
+
+    <a href="#ordersStatus">
+
+        <i class="fa-solid fa-warehouse"></i>
+
+        <span>Warehouse</span>
+
+    </a>
+
+    <a href="#aiInsights">
+
+        <i class="fa-solid fa-robot"></i>
+
+        <span>AI Insights</span>
+
+    </a>
+
+    <a href="#summary">
+
+        <i class="fa-solid fa-gear"></i>
+
+        <span>Settings</span>
+
+    </a>
+    <a href="/logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+    </a>
+</nav>
 
     </aside>
 
@@ -96,7 +146,9 @@
                 <h1>MetricMind Dashboard</h1>
 
                 <p>
+
                     AI Powered Business Intelligence Platform
+
                 </p>
 
             </div>
@@ -109,25 +161,39 @@
                     placeholder="Search KPI, charts, AI insights...">
 
                 <select id="dateFilter">
-                     <option value="30">Last 30 Days</option>
-                     <option value="90">Last 90 Days</option>
-                     <option value="365">This Year</option>
+
+                    <option value="30">Last 30 Days</option>
+
+                    <option value="90">Last 90 Days</option>
+
+                    <option value="365">This Year</option>
+
                 </select>
 
                 <select id="regionFilter">
-                     <option value="All">All Regions</option>
-                     <option value="North">North</option>
-                     <option value="South">South</option>
-                     <option value="East">East</option>
+
+                    <option value="All">All Regions</option>
+
+                    <option value="North">North</option>
+
+                    <option value="South">South</option>
+
+                    <option value="East">East</option>
+
                     <option value="West">West</option>
+
                 </select>
 
-                <button title="Notifications">
+                <button id="notificationBtn" title="Notifications">
+
                     <i class="fa-solid fa-bell"></i>
+
                 </button>
 
                 <button id="theme-toggle" title="Dark Mode">
+
                     <i class="fa-solid fa-moon"></i>
+
                 </button>
 
                 <div class="profile">
@@ -147,6 +213,27 @@
             </div>
 
         </header>
+        <div id="notificationPanel" class="notification-panel">
+
+    <h3>🔔 Notifications</h3>
+
+    <div class="notification-item">
+        ✅ Revenue increased by 12%
+    </div>
+
+    <div class="notification-item">
+        👥 25 New Customers Joined
+    </div>
+
+    <div class="notification-item">
+        📦 Inventory Level is Healthy
+    </div>
+
+    <div class="notification-item">
+        🤖 AI Generated New Recommendations
+    </div>
+
+</div>
 
         <!-- =========================
                 HERO
@@ -156,8 +243,10 @@
 
             <div>
 
-                <h2>
+                <h2 id="greeting">
+
                     Welcome Back 👋
+
                 </h2>
 
                 <p>
@@ -170,464 +259,477 @@
             </div>
 
         </section>
-        <!-- =========================
-        DASHBOARD TOOLBAR
-========================== -->
-
-<section class="dashboard-toolbar">
-
-    <div class="toolbar-info">
-
-        <span id="currentDate"></span>
-
-        <span id="currentTime"></span>
-
-        <span id="lastUpdated"></span>
-
-    </div>
-
-    <div class="toolbar-actions">
-
-        <button id="refreshDashboard">
-            <i class="fa-solid fa-rotate-right"></i>
-            Refresh
-        </button>
-
-        <button id="downloadDashboard">
-            <i class="fa-solid fa-download"></i>
-            Download
-        </button>
-
-        <button id="fullscreenBtn">
-            <i class="fa-solid fa-expand"></i>
-            Fullscreen
-        </button>
-
-    </div>
-
-</section>
 
         <!-- =========================
-                KPI CARDS
+                DASHBOARD TOOLBAR
         ========================== -->
 
-        <section class="kpi-grid" id="kpis">
+        <section class="dashboard-toolbar">
 
-            <!-- Revenue -->
+            <div class="toolbar-info">
 
-            <div class="kpi-card revenue">
+                <span id="currentDate"></span>
 
-                <div class="card-top">
+                <span id="currentTime"></span>
 
-                    <div>
-
-                        <h4>Total Revenue</h4>
-
-                        <h2>
-
-                            ₹<span class="counter"
-                                    data-target="{{ metrics['Total Revenue'] }}">
-                                {{ "{:,.0f}".format(metrics["Total Revenue"]) }}
-                            </span>
-
-                        </h2>
-
-                    </div>
-
-                    <div class="icon">
-
-                        <i class="fa-solid fa-indian-rupee-sign"></i>
-
-                    </div>
-
-                </div>
-
-                <div class="card-bottom">
-
-                    <span class="positive">
-
-                        <i class="fa-solid fa-arrow-trend-up"></i>
-
-                        +12.4%
-
-                    </span>
-
-                    <small>
-
-                        Compared to last month
-
-                    </small>
-
-                </div>
+                <span id="lastUpdated"></span>
 
             </div>
 
-            <!-- Orders -->
+            <div class="toolbar-actions">
 
-            <div class="kpi-card orders">
+                <button id="refreshDashboard">
 
-                <div class="card-top">
+                    <i class="fa-solid fa-rotate-right"></i>
 
-                    <div>
+                    Refresh
 
-                        <h4>Total Orders</h4>
+                </button>
 
-                        <h2 class="counter"
-                            data-target="{{ metrics['Total Orders'] }}">
+                <button id="downloadDashboard">
 
-                            {{ metrics["Total Orders"] }}
+                    <i class="fa-solid fa-download"></i>
 
-                        </h2>
+                    Download Report
 
-                    </div>
+                </button>
 
-                    <div class="icon">
+                <button id="fullscreenBtn">
 
-                        <i class="fa-solid fa-cart-shopping"></i>
+                    <i class="fa-solid fa-expand"></i>
 
-                    </div>
+                    Fullscreen
 
-                </div>
-
-                <div class="card-bottom">
-
-                    <span class="positive">
-
-                        <i class="fa-solid fa-arrow-trend-up"></i>
-
-                        +8.2%
-
-                    </span>
-
-                    <small>
-
-                        Compared to last month
-
-                    </small>
-
-                </div>
-
-            </div>
-
-            <!-- Customers -->
-
-            <div class="kpi-card customers">
-
-                <div class="card-top">
-
-                    <div>
-
-                        <h4>Customers</h4>
-
-                        <h2 class="counter"
-                            data-target="{{ metrics['Total Customers'] }}">
-
-                            {{ metrics["Total Customers"] }}
-
-                        </h2>
-
-                    </div>
-
-                    <div class="icon">
-
-                        <i class="fa-solid fa-users"></i>
-
-                    </div>
-
-                </div>
-
-                <div class="card-bottom">
-
-                    <span class="positive">
-
-                        <i class="fa-solid fa-arrow-trend-up"></i>
-
-                        +15.6%
-
-                    </span>
-
-                    <small>
-
-                        Compared to last month
-
-                    </small>
-
-                </div>
-
-            </div>
-
-            <!-- Products -->
-
-            <div class="kpi-card products">
-
-                <div class="card-top">
-
-                    <div>
-
-                        <h4>Products</h4>
-
-                        <h2 class="counter"
-                            data-target="{{ metrics['Total Products'] }}">
-
-                            {{ metrics["Total Products"] }}
-
-                        </h2>
-
-                    </div>
-
-                    <div class="icon">
-
-                        <i class="fa-solid fa-box-open"></i>
-
-                    </div>
-
-                </div>
-
-                <div class="card-bottom">
-
-                    <span class="positive">
-
-                        <i class="fa-solid fa-arrow-trend-up"></i>
-
-                        +5.1%
-
-                    </span>
-
-                    <small>
-
-                        Compared to last month
-
-                    </small>
-
-                </div>
-
-            </div>
-
-            <!-- Returns -->
-
-            <div class="kpi-card returns">
-
-                <div class="card-top">
-
-                    <div>
-
-                        <h4>Returns</h4>
-
-                        <h2 class="counter"
-                            data-target="{{ metrics['Total Returns'] }}">
-
-                            {{ metrics["Total Returns"] }}
-
-                        </h2>
-
-                    </div>
-
-                    <div class="icon">
-
-                        <i class="fa-solid fa-arrow-rotate-left"></i>
-
-                    </div>
-
-                </div>
-
-                <div class="card-bottom">
-
-                    <span class="negative">
-
-                        <i class="fa-solid fa-arrow-trend-down"></i>
-
-                        -2.3%
-
-                    </span>
-
-                    <small>
-
-                        Compared to last month
-
-                    </small>
-
-                </div>
+                </button>
 
             </div>
 
         </section>
+        <!-- =========================
+        KPI CARDS
+========================== -->
 
-        <!-- AI Insights Starts Here -->
-                 <!-- =========================
-                DASHBOARD GRID
-        ========================== -->
+<section class="kpi-grid" id="kpis">
 
-        <section class="dashboard-grid">
+    <!-- Revenue -->
 
-            <!-- LEFT PANEL -->
+    <div class="kpi-card revenue">
 
-            <div class="left-panel">
+        <div class="card-top">
 
-                <!-- AI INSIGHTS -->
+            <div>
 
-                <div class="glass-card ai-card" id="aiInsights">
+                <h4>Total Revenue</h4>
 
-                    <div class="section-header">
+                <h2>
 
-                        <h3>
+                    ₹<span class="counter"
+                        data-target="{{ metrics['Total Revenue'] }}">
 
-                            <i class="fa-solid fa-robot"></i>
+                        {{ "{:,.0f}".format(metrics["Total Revenue"]) }}
 
-                            AI Business Insights
+                    </span>
 
-                        </h3>
+                </h2>
 
-                        <button class="view-btn">
+            </div>
 
-                            View Report
+            <div class="icon">
 
-                        </button>
+                <i class="fa-solid fa-indian-rupee-sign"></i>
 
-                    </div>
+            </div>
 
-                    <div class="insight-list">
-
-    {% for insight in ai_insights %}
-
-    <div class="insight">
-
-        <div class="insight-icon">
-            {{ insight.icon }}
         </div>
 
-        <div>
+        <div class="card-bottom">
 
-            <h4>{{ insight.title }}</h4>
+            <span class="positive">
 
-            <p>{{ insight.message }}</p>
-            <small class="recommendation">
-                {{ insight.recommendation }}
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                +12.4%
+
+            </span>
+
+            <small>
+
+                Compared to last month
+
             </small>
 
         </div>
 
     </div>
 
-    {% endfor %}
+    <!-- Orders -->
 
-</div>
+    <div class="kpi-card orders">
 
-                </div>
+        <div class="card-top">
 
-                <!-- MONTHLY REVENUE -->
+            <div>
 
-                <div class="glass-card chart-card" id="monthlyRevenue">
+                <h4>Total Orders</h4>
 
-                    <div class="section-header">
+                <h2 class="counter"
+                    data-target="{{ metrics['Total Orders'] }}">
 
-                        <h3>
+                    {{ metrics["Total Orders"] }}
 
-                            <i class="fa-solid fa-chart-line"></i>
-
-                            Monthly Revenue
-
-                        </h3>
-
-                    </div>
-
-                    {{ monthly_revenue_chart|safe }}
-
-                </div>
+                </h2>
 
             </div>
 
-            <!-- RIGHT PANEL -->
+            <div class="icon">
 
-            <div class="right-panel">
-
-                <!-- QUICK STATS -->
-
-                <div class="glass-card stats-card">
-
-                    <h3>
-
-                        Quick Statistics
-
-                    </h3>
-
-                    <div class="mini-stat">
-
-                        <span>Total Revenue</span>
-
-                        <strong>
-
-                            ₹{{ "{:,.0f}".format(metrics["Total Revenue"]) }}
-
-                        </strong>
-
-                    </div>
-
-                    <div class="mini-stat">
-
-                        <span>Total Customers</span>
-
-                        <strong>
-
-                            {{ metrics["Total Customers"] }}
-
-                        </strong>
-
-                    </div>
-
-                    <div class="mini-stat">
-
-                        <span>Total Products</span>
-
-                        <strong>
-
-                            {{ metrics["Total Products"] }}
-
-                        </strong>
-
-                    </div>
-
-                    <div class="mini-stat">
-
-                        <span>Total Returns</span>
-
-                        <strong>
-
-                            {{ metrics["Total Returns"] }}
-
-                        </strong>
-
-                    </div>
-
-                </div>
-
-                <!-- SALES BY REGION -->
-
-                <div class="glass-card chart-card" id="salesRegion">
-
-                    <div class="section-header">
-
-                        <h3>
-
-                            <i class="fa-solid fa-earth-asia"></i>
-
-                            Sales by Region
-
-                        </h3>
-
-                    </div>
-
-                    {{ sales_by_region_chart|safe }}
-
-                </div>
+                <i class="fa-solid fa-cart-shopping"></i>
 
             </div>
 
-        </section>
+        </div>
 
-        <!-- =========================
-              SECOND CHART GRID
-        ========================== -->
-        <section class="bottom-grid">
+        <div class="card-bottom">
+
+            <span class="positive">
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                +8.2%
+
+            </span>
+
+            <small>
+
+                Compared to last month
+
+            </small>
+
+        </div>
+
+    </div>
+
+    <!-- Customers -->
+
+    <div class="kpi-card customers">
+
+        <div class="card-top">
+
+            <div>
+
+                <h4>Customers</h4>
+
+                <h2 class="counter"
+                    data-target="{{ metrics['Total Customers'] }}">
+
+                    {{ metrics["Total Customers"] }}
+
+                </h2>
+
+            </div>
+
+            <div class="icon">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+        </div>
+
+        <div class="card-bottom">
+
+            <span class="positive">
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                +15.6%
+
+            </span>
+
+            <small>
+
+                Compared to last month
+
+            </small>
+
+        </div>
+
+    </div>
+
+    <!-- Products -->
+
+    <div class="kpi-card products">
+
+        <div class="card-top">
+
+            <div>
+
+                <h4>Products</h4>
+
+                <h2 class="counter"
+                    data-target="{{ metrics['Total Products'] }}">
+
+                    {{ metrics["Total Products"] }}
+
+                </h2>
+
+            </div>
+
+            <div class="icon">
+
+                <i class="fa-solid fa-box-open"></i>
+
+            </div>
+
+        </div>
+
+        <div class="card-bottom">
+
+            <span class="positive">
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                +5.1%
+
+            </span>
+
+            <small>
+
+                Compared to last month
+
+            </small>
+
+        </div>
+
+    </div>
+
+    <!-- Returns -->
+
+    <div class="kpi-card returns">
+
+        <div class="card-top">
+
+            <div>
+
+                <h4>Returns</h4>
+
+                <h2 class="counter"
+                    data-target="{{ metrics['Total Returns'] }}">
+
+                    {{ metrics["Total Returns"] }}
+
+                </h2>
+
+            </div>
+
+            <div class="icon">
+
+                <i class="fa-solid fa-arrow-rotate-left"></i>
+
+            </div>
+
+        </div>
+
+        <div class="card-bottom">
+
+            <span class="negative">
+
+                <i class="fa-solid fa-arrow-trend-down"></i>
+
+                -2.3%
+
+            </span>
+
+            <small>
+
+                Compared to last month
+
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+        DASHBOARD GRID
+========================== -->
+
+<section class="dashboard-grid">
+
+    <!-- LEFT PANEL -->
+
+    <div class="left-panel">
+
+        <!-- AI INSIGHTS -->
+
+        <div class="glass-card ai-card" id="aiInsights">
+
+            <div class="section-header">
+
+                <h3>
+
+                    <i class="fa-solid fa-robot"></i>
+
+                    AI Business Insights
+
+                </h3>
+
+                <button class="view-btn">
+
+                    View Report
+
+                </button>
+
+            </div>
+
+            <div class="insight-list">
+
+                {% for insight in ai_insights %}
+
+                <div class="insight">
+
+                    <div class="insight-icon">
+
+                        {{ insight.icon }}
+
+                    </div>
+
+                    <div>
+
+                        <h4>{{ insight.title }}</h4>
+
+                        <p>{{ insight.message }}</p>
+
+                        <small class="recommendation">
+
+                            {{ insight.recommendation }}
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+        <!-- MONTHLY REVENUE -->
+
+        <div class="glass-card chart-card" id="monthlyRevenue">
+
+            <div class="section-header">
+
+                <h3>
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Monthly Revenue
+
+                </h3>
+
+            </div>
+
+            {{ monthly_revenue_chart|safe }}
+
+        </div>
+
+    </div>
+        <!-- RIGHT PANEL -->
+
+    <div class="right-panel">
+
+        <!-- QUICK STATS -->
+
+        <div class="glass-card stats-card">
+
+            <h3>
+
+                Quick Statistics
+
+            </h3>
+
+            <div class="mini-stat">
+
+                <span>Total Revenue</span>
+
+                <strong>
+
+                    ₹{{ "{:,.0f}".format(metrics["Total Revenue"]) }}
+
+                </strong>
+
+            </div>
+
+            <div class="mini-stat">
+
+                <span>Total Customers</span>
+
+                <strong>
+
+                    {{ metrics["Total Customers"] }}
+
+                </strong>
+
+            </div>
+
+            <div class="mini-stat">
+
+                <span>Total Products</span>
+
+                <strong>
+
+                    {{ metrics["Total Products"] }}
+
+                </strong>
+
+            </div>
+
+            <div class="mini-stat">
+
+                <span>Total Returns</span>
+
+                <strong>
+
+                    {{ metrics["Total Returns"] }}
+
+                </strong>
+
+            </div>
+
+        </div>
+
+        <!-- SALES BY REGION -->
+
+        <div class="glass-card chart-card" id="salesRegion">
+
+            <div class="section-header">
+
+                <h3>
+
+                    <i class="fa-solid fa-earth-asia"></i>
+
+                    Sales by Region
+
+                </h3>
+
+            </div>
+
+            {{ sales_by_region_chart|safe }}
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+        SECOND CHART GRID
+========================== -->
+
+<section class="bottom-grid">
 
     <!-- Top Products -->
 
@@ -784,6 +886,104 @@
                 Budget utilization is healthy while expenses remain under control.
 
             </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+        AI CHAT ASSISTANT
+========================== -->
+
+<section class="glass-card ai-chat-section" id="aiAssistant">
+
+    <div class="section-header">
+
+        <h2>
+
+            <i class="fa-solid fa-comments"></i>
+
+            MetricMind AI Assistant
+
+        </h2>
+
+    </div>
+
+    <div class="chat-container">
+
+        <!-- Chat Messages -->
+
+        <div id="chatMessages" class="chat-messages">
+
+            <div class="bot-message">
+
+                👋 Hello! I'm <strong>MetricMind AI</strong>.
+
+                <br><br>
+
+                I can answer questions about your dashboard.
+
+                <br><br>
+
+                <strong>Try asking:</strong>
+
+                <ul>
+
+                    <li>Show total revenue</li>
+
+                    <li>How many customers?</li>
+
+                    <li>How many products?</li>
+
+                    <li>How many returns?</li>
+
+                    <li>Summarize the dashboard</li>
+
+                    <li>Give recommendations</li>
+
+                    <li>Business health</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- Quick Questions -->
+
+        <div class="quick-questions">
+
+            <button class="quick-btn">Revenue</button>
+
+            <button class="quick-btn">Customers</button>
+
+            <button class="quick-btn">Products</button>
+
+            <button class="quick-btn">Summary</button>
+
+            <button class="quick-btn">Recommendations</button>
+
+            <button class="quick-btn">Business Health</button>
+
+        </div>
+
+        <!-- Chat Input -->
+
+        <div class="chat-input">
+
+            <input
+                type="text"
+                id="chatInput"
+                placeholder="Ask anything about your business dashboard...">
+
+            <button id="sendChat">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Send
+
+            </button>
 
         </div>
 

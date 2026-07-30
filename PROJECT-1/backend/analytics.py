@@ -136,3 +136,72 @@ def generate_ai_insights():
         })
 
     return insights
+def business_chat(question):
+
+    question = question.lower()
+
+    metrics = get_dashboard_metrics()
+
+    revenue = metrics["Total Revenue"]
+    customers = metrics["Total Customers"]
+    products = metrics["Total Products"]
+    returns = metrics["Total Returns"]
+    budget = metrics["Budget Usage"]
+    low_stock = metrics["Low Stock"]
+
+    if "summary" in question:
+
+        return f"""
+📊 Business Summary
+
+• Revenue: ₹{revenue:,.2f}
+
+• Customers: {customers}
+
+• Products: {products}
+
+• Returns: {returns}
+
+• Budget Usage: {budget}%
+
+• Low Stock Items: {low_stock}
+
+Overall, the business appears healthy. Continue monitoring inventory and budget utilization.
+"""
+
+    elif "recommend" in question or "improve" in question:
+
+        recommendations = []
+
+        if budget > 90:
+            recommendations.append("⚠ Budget usage is high. Reduce unnecessary expenses.")
+
+        if low_stock > 10:
+            recommendations.append("📦 Restock low inventory items.")
+
+        if returns > 20:
+            recommendations.append("↩ Investigate product return reasons.")
+
+        if revenue < 100000:
+            recommendations.append("📈 Revenue is low. Increase marketing campaigns.")
+
+        if not recommendations:
+            recommendations.append("✅ Business performance looks stable.")
+
+        return "\n".join(recommendations)
+
+    elif "health" in question:
+
+        score = 100
+
+        score -= returns
+
+        score -= low_stock
+
+        score -= max(0, budget - 80)
+
+        score = max(score, 0)
+
+        return f"🏆 Overall Business Health Score: {score}/100"
+
+    return None
