@@ -111,4 +111,99 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+    // ==========================
+    // Dashboard Toolbar
+    // ==========================
+
+    const dateElement = document.getElementById("currentDate");
+    const timeElement = document.getElementById("currentTime");
+    const lastUpdated = document.getElementById("lastUpdated");
+
+    function updateClock() {
+
+        const now = new Date();
+
+        if (dateElement) {
+
+            dateElement.innerHTML =
+                `<i class="fa-solid fa-calendar-days"></i> ${now.toLocaleDateString()}`;
+
+        }
+
+        if (timeElement) {
+
+            timeElement.innerHTML =
+                `<i class="fa-solid fa-clock"></i> ${now.toLocaleTimeString()}`;
+
+        }
+
+    }
+
+    updateClock();
+
+    setInterval(updateClock, 1000);
+
+    if (lastUpdated) {
+
+        lastUpdated.innerHTML =
+            `<i class="fa-solid fa-rotate"></i> Last Updated: Just Now`;
+
+    }
+
+    // ==========================
+    // Refresh Button
+    // ==========================
+
+    const refreshBtn = document.getElementById("refreshDashboard");
+
+    if (refreshBtn) {
+
+        refreshBtn.addEventListener("click", () => {
+
+            location.reload();
+
+        });
+
+    }
+
+    // ==========================
+    // Download Button
+    // ==========================
+
+    const downloadBtn = document.getElementById("downloadDashboard");
+
+    if (downloadBtn) {
+
+        downloadBtn.addEventListener("click", () => {
+
+            window.print();
+
+        });
+
+    }
+
+    // ==========================
+    // Fullscreen Button
+    // ==========================
+
+    const fullscreenBtn = document.getElementById("fullscreenBtn");
+
+    if (fullscreenBtn) {
+
+        fullscreenBtn.addEventListener("click", () => {
+
+            if (!document.fullscreenElement) {
+
+                document.documentElement.requestFullscreen();
+
+            } else {
+
+                document.exitFullscreen();
+
+            }
+
+        });
+
+    }
+
 });
