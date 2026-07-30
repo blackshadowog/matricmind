@@ -1,66 +1,94 @@
 # 🚀 MetricMind – Agentic Semantic BI Engine
 
-MetricMind is an AI-powered Business Intelligence dashboard that transforms business data into interactive visualizations and actionable insights. It provides real-time analytics for revenue, customers, products, inventory, budgets, expenses, and returns through an intuitive web interface.
+MetricMind is an AI-powered Business Intelligence dashboard that transforms business data into interactive visualizations and actionable insights. It enables users to analyze revenue, customers, products, inventory, budgets, expenses, and returns through an intuitive and responsive web interface.
 
 ---
 
-## 🌐 Live Demo
+# 🌐 Live Demo
 
-**🔗 Live Application:** https://matricmind-4.onrender.com
+🔗 **Live Application:**  
+https://matricmind-4.onrender.com
 
 ---
 
-## ✨ Features
+# ✨ Features
 
+- 🔐 Demo Login Page
 - 📊 Interactive Business Dashboard
 - 📈 Plotly Data Visualizations
 - 🤖 AI-Powered Business Insights
-- 📋 Executive Summary
-- 🔍 Search Functionality
+- 💬 AI Chat Assistant
+- 📄 PDF Report Generation
+- 📋 Executive Business Summary
+- 🔍 Dashboard Search
 - 🌙 Dark Mode Support
 - 📱 Responsive Design
+- 🚪 Logout Functionality
 - ⚡ Flask Backend
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Tech Stack
 
+### Backend
 - Python
 - Flask
 - Pandas
 - Plotly
+- ReportLab
+
+### Frontend
 - HTML5
 - CSS3
 - JavaScript
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 matricmind/
 ├── database/
 ├── PROJECT-1/
 │   ├── backend/
-│   ├── charts/
+│   │   ├── analytics.py
+│   │   ├── app.py
+│   │   ├── charts.py
+│   │   ├── database.py
+│   │   └── report_generator.py
+│   │
 │   ├── data/
-│   ├── frontend/
 │   ├── reports/
 │   ├── static/
+│   │   ├── css/
+│   │   │   ├── style.css
+│   │   │   └── login.css
+│   │   └── js/
+│   │       └── dashboard.js
+│   │
 │   ├── templates/
+│   │   ├── login.html
+│   │   └── dashboard.html
+│   │
 │   ├── requirements.txt
 │   └── README.md
+│
 └── README.md
 ```
 
 ---
 
-## ▶️ Installation
+# 🚀 Installation
 
 Clone the repository:
 
 ```bash
 git clone https://github.com/blackshadowog/matricmind.git
+```
+
+Go to the project directory:
+
+```bash
 cd matricmind/PROJECT-1
 ```
 
@@ -70,7 +98,7 @@ Create a virtual environment:
 python -m venv venv
 ```
 
-Activate it (Windows):
+Activate the virtual environment (Windows):
 
 ```bash
 venv\Scripts\activate
@@ -85,28 +113,26 @@ pip install -r requirements.txt
 Run the application:
 
 ```bash
-python backend/app.py
+python -m backend.app
 ```
 
 Open your browser:
 
-```
+```text
 http://127.0.0.1:5000
 ```
 
 ---
 
-## 🌍 Deployment
+# 🔑 Demo Login
 
-**Platform:** Render
+This project includes a **demo login system**.
 
-**Live URL:** https://matricmind-4.onrender.com
+Simply enter **any email address** and **any password** to access the dashboard.
 
 ---
 
-## 📸 Dashboard
-
-The dashboard provides:
+# 📊 Dashboard Modules
 
 - Revenue Analytics
 - Customer Insights
@@ -116,16 +142,38 @@ The dashboard provides:
 - Budget vs Expense Analysis
 - Order Status Tracking
 - AI Business Insights
+- AI Chat Assistant
+- PDF Report Download
 
 ---
 
-## 📄 License
+# 🌍 Deployment
 
-This project is developed for learning and demonstration purposes.
+**Platform:** Render
+
+**Live URL:** https://matricmind-4.onrender.com
 
 ---
 
-## 👨‍💻 Author
+# 🎯 Future Enhancements
+
+- Database Authentication
+- Role-Based Access Control
+- Real-Time Data Integration
+- Predictive Revenue Forecasting
+- Excel & CSV Export
+- Interactive Filters
+- User Management
+
+---
+
+# 📄 License
+
+This project is developed for educational and demonstration purposes.
+
+---
+
+# 👨‍💻 Author
 
 **Rakshith Merugu**
 
